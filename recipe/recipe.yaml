@@ -1,5 +1,5 @@
 context:
-  version: "2.0.0"
+  version: "2.2.0"
 
 package:
   name: vecgeom
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.cern.ch/VecGeom/VecGeom/-/archive/v${{ version }}/VecGeom-v${{ version }}.tar.gz
-  sha256: 509d26ffd95d517094d2fe97712a0a54ac0300bd943de3ae626bf4abeb1b6424
+  sha256: 885b293a82cd3c80221e0aa2b8b5ca1b6c336abcd4b6756a2bad6e3ed4543493
 
 build:
   script:
@@ -20,7 +20,7 @@ build:
       then: ctest --test-dir build --output-on-failure --verbose -E "create_geometry|AssemblyTest|TestGeoManager"
       else: ctest --test-dir build --output-on-failure --verbose
     - cmake --install build
-  number: 1
+  number: 0
   skip:
     - win
 
